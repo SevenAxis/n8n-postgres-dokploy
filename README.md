@@ -1,2 +1,2 @@
-# n8n-postgres-dokploy
-N8n with PostgreSQL
+# n8n with PostgreSQL
+Starts n8n with PostgreSQL as database.
