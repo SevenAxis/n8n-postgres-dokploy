@@ -19,6 +19,10 @@ services:
       interval: 5s
       timeout: 5s
       retries: 10
+    ports:
+    - 5678
+    networks:
+    - dokploy-network
 
   n8n:
     image: docker.n8n.io/n8nio/n8n:latest
@@ -39,6 +43,10 @@ services:
       - DB_POSTGRESDB_DATABASE=${POSTGRES_DB}
       - DB_POSTGRESDB_USER=${POSTGRES_USER}
       - DB_POSTGRESDB_PASSWORD=${POSTGRES_PASSWORD}
+    ports:
+    - 5432
+    networks:
+    - dokploy-network
     links:
       - postgres
     volumes:
@@ -46,3 +54,7 @@ services:
     depends_on:
       postgres:
         condition: service_healthy
+
+networks:
+  dokploy-network:
+    external: true
