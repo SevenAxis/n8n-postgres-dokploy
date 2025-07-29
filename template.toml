@@ -6,7 +6,7 @@ mounts = []
 
 [[config.domains]]
 serviceName = "n8n"
-port = 5_678
+port = 5678
 host = "${main_domain}"
 
 [config.env]
